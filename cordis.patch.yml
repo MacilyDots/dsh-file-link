@@ -1,0 +1,7 @@
+# dsh-file-link bundle patch: one insert row activating the plugin.
+# The Host half is a stub: every open action routes through the Host services
+# the Harness already provides (`remote.session.openWorkspacePath` and the
+# Client `sidebarRight`), so no host process logic is required.
+- insert:
+    - id: file-link
+      name: 'dsh-file-link'

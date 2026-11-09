@@ -1,0 +1,53 @@
+{
+  "name": "dsh-file-link",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Clickable file references in DeepSeek Harness chat: every path the assistant mentions becomes a live link — click opens the preview sidebar, Ctrl+click opens it in the system default application, Alt+click reveals it in the file manager. Includes an accent-color settings page that drives both the link highlight and the Harness UI theme.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "file",
+    "link",
+    "clickable",
+    "theme"
+  ],
+  "license": "MIT",
+  "author": "MacilyDots",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MacilyDots/dsh-file-link.git"
+  },
+  "homepage": "https://github.com/MacilyDots/dsh-file-link#readme",
+  "bugs": {
+    "url": "https://github.com/MacilyDots/dsh-file-link/issues"
+  },
+  "scripts": {
+    "test": "node test/paths.test.mjs"
+  }
+}
